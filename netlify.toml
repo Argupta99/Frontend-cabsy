@@ -1,6 +1,10 @@
 [build]
-  publish = "Frontend/dist"
+  base = "Frontend"
   command = "npm run build"
+  publish = "dist"
 
-[build.environment]
-  NODE_VERSION = "22.16.0"
+[functions]
+  directory = "netlify/functions"
+
+[context.production.environment]
+  VITE_BASE_URL = "https://backend-cabsy.onrender.com"
